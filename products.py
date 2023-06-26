@@ -1,5 +1,8 @@
 import os # operating system
 
+def check_file(filename):
+    with open(filename, 'w', encoding='utf-8') as f:
+            f.write('商品,價格\n')
 
 def read_file(filename):
     products = []
@@ -38,6 +41,7 @@ def write_file(filename, products):
 
 def main():
     filename = 'products.csv'
+    check_file('products.csv')
     if os.path.isfile(filename): # 檢查檔案在不在
         print('yeah! 找到檔案了!')
         products = read_file(filename)
